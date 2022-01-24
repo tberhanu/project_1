@@ -1,4 +1,6 @@
+import django_heroku
 from project_1.settings.base import *
+
 
 DEBUG = False
 ALLOWED_HOSTS = ['*']
@@ -17,3 +19,6 @@ try:
 	from project_1.settings.local import *
 except:
 	pass
+
+
+django_heroku.settings(locals())
