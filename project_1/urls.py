@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from app_1 import views as app_1_views
+admin.site.site_header = 'Yonas LLC Admin'
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
     path('', app_1_views.index, name='index'),
     path('about/', app_1_views.about, name='about'),
     path('contact/', app_1_views.contact, name='contact'),
